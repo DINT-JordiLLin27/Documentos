@@ -1,0 +1,30 @@
+﻿<Window x:Class="WpfApp2.Configuracion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="Configuracion" Height="450" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight">
+    <Window.Resources>
+        <Style TargetType="StackPanel" x:Key="contenido">
+            <Setter Property="Orientation" Value="Horizontal"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+    </Window.Resources>
+    
+    <StackPanel Orientation="Vertical">
+        <StackPanel Style="{StaticResource contenido}">
+            <TextBlock Margin="5">Alto</TextBlock>
+            <TextBox x:Name="AltoTextBox" MinWidth="200" Margin="18,5,5,5"/>
+        </StackPanel>
+        <StackPanel Style="{StaticResource contenido}">
+            <TextBlock Margin="5">Ancho</TextBlock>
+            <TextBox x:Name="AnchoTextBox" MinWidth="200" Margin="5"/>
+        </StackPanel>
+        <StackPanel  Style="{StaticResource contenido}" HorizontalAlignment="Right">
+            <Button x:Name="AceptarButton" Margin="5" Click="AceptarButton_Click">Aceptar</Button>
+            <Button x:Name="CancelarButton" Margin="5" Click="CancelarButton_Click">Cancelar</Button>
+        </StackPanel>
+    </StackPanel>
+</Window>

@@ -1,0 +1,13 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="Docs" Height="450" Width="800" SizeToContent="WidthAndHeight" ResizeMode="NoResize" Icon="img/administrative_docs.ico">
+    <StackPanel>
+        <Button x:Name="NuevoDocumentoButton" Content="Nuevo Documento" Margin="5" Click="NuevoDocumentoButton_Click"/>
+        <Button x:Name="ConfiguracionButton" Content="Configuración" Margin="5" Click="ConfiguracionButton_Click"/>
+    </StackPanel>
+</Window>
