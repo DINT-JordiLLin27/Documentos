@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
-        Title="NuevoDoc" Height="450" Width="500" Closing="Window_Closing">
+        Title="NuevoDoc" Height="400" Width="500" Closing="Window_Closing">
+
     <DockPanel>
         <Button x:Name="GuardarButton" DockPanel.Dock="Bottom" Margin="2" Click="GuardarButton_Click">Guardar</Button>
         <TextBox x:Name="DocumentoTextBox" AcceptsReturn="True"/>

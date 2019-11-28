@@ -34,7 +34,9 @@ namespace WpfApp2
             {
                 string rutaFichero = saveFileDialog.FileName;
 
-                File.WriteAllText(rutaFichero,DocumentoTextBox.Text);
+                if (rutaFichero != "")
+                    File.WriteAllText(rutaFichero, DocumentoTextBox.Text, Encoding.UTF8);
+
 
             }
         }
