@@ -19,25 +19,18 @@ namespace WpfApp2
     /// </summary>
     public partial class Configuracion : Window
     {
+        public int Alto { get; set; }
+        public int Ancho { get; set; }
         public Configuracion()
         {
             InitializeComponent();
+            AltoTextBox.Text = Alto.ToString();
+            AnchoTextBox.Text = Ancho.ToString();
         }
 
         private void AceptarButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
-        }
-
-        private void CancelarButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            (this.Owner as MainWindow).Alto = int.Parse(AltoTextBox.Text);
-            (this.Owner as MainWindow).Ancho = int.Parse(AnchoTextBox.Text);
+            this.DialogResult = true;
         }
     }
 }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
-        Title="Configuracion" Height="450" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" Closing="Window_Closing">
+        Title="Configuracion" Height="450" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight">
     <Window.Resources>
         <Style TargetType="StackPanel" x:Key="contenido">
             <Setter Property="Orientation" Value="Horizontal"/>
@@ -16,15 +16,15 @@
     <StackPanel Orientation="Vertical">
         <StackPanel Style="{StaticResource contenido}">
             <TextBlock Margin="5">Alto</TextBlock>
-            <TextBox x:Name="AltoTextBox" MinWidth="200" Margin="18,5,5,5">500</TextBox>
+            <TextBox x:Name="AltoTextBox" MinWidth="200" Margin="18,5,5,5" Text="{Binding RelativeSource={RelativeSource AncestorType=local:Configuracion}, Path=Alto}"></TextBox>
         </StackPanel>
         <StackPanel Style="{StaticResource contenido}">
             <TextBlock Margin="5">Ancho</TextBlock>
-            <TextBox x:Name="AnchoTextBox" MinWidth="200" Margin="5">500</TextBox>
+            <TextBox x:Name="AnchoTextBox" MinWidth="200" Margin="5" Text="{Binding RelativeSource={RelativeSource AncestorType=local:Configuracion}, Path=Ancho}"></TextBox>
         </StackPanel>
         <StackPanel  Style="{StaticResource contenido}" HorizontalAlignment="Right">
-            <Button x:Name="AceptarButton" Margin="5" Click="AceptarButton_Click">Aceptar</Button>
-            <Button x:Name="CancelarButton" Margin="5" Click="CancelarButton_Click">Cancelar</Button>
+            <Button x:Name="AceptarButton" Margin="5" IsDefault="True" Click="AceptarButton_Click">Aceptar</Button>
+            <Button x:Name="CancelarButton" Margin="5" IsCancel="True">Cancelar</Button>
         </StackPanel>
     </StackPanel>
 </Window>

@@ -21,7 +21,7 @@ namespace WpfApp2
     public partial class MainWindow : Window
     {
 
-        private int alto;
+        private int alto = 500;
 
         public int Alto
         {
@@ -29,17 +29,13 @@ namespace WpfApp2
             set { alto = value; }
         }
 
-        private int ancho;
+        private int ancho = 500;
 
         public int Ancho
         {
             get { return ancho; }
             set { ancho = value; }
         }
-
-
-        NuevoDoc nuevoDoc;
-        Configuracion ventanaConfig;
 
         public MainWindow()
         {
@@ -50,7 +46,7 @@ namespace WpfApp2
 
         private void NuevoDocumentoButton_Click(object sender, RoutedEventArgs e)
         {
-            nuevoDoc = new NuevoDoc();
+            NuevoDoc nuevoDoc = new NuevoDoc();
             nuevoDoc.Owner = this;
             nuevoDoc.Title = "Documento " + this.OwnedWindows.Count;
             nuevoDoc.Width = ancho;
@@ -60,20 +56,18 @@ namespace WpfApp2
 
         private void ConfiguracionButton_Click(object sender, RoutedEventArgs e)
         {
-            ventanaConfig = new Configuracion();
-
+            Configuracion ventanaConfig = new Configuracion();
+            ventanaConfig.Alto = Alto;
+            ventanaConfig.Ancho = Ancho;
             ventanaConfig.Owner = this;
-            if (nuevoDoc != null)
-            {
-                ventanaConfig.AnchoTextBox.Text = nuevoDoc.Width.ToString();
-                ventanaConfig.AltoTextBox.Text = nuevoDoc.Height.ToString();
-            }
-            else {
 
-                ventanaConfig.AnchoTextBox.Text = "500";
-                ventanaConfig.AltoTextBox.Text = "500";
+
+
+            if (ventanaConfig.ShowDialog() == true)
+            {
+                Alto = ventanaConfig.Alto;
+                Ancho = ventanaConfig.Ancho;
             }
-            ventanaConfig.ShowDialog();
         }
     }
 }

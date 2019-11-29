@@ -43,7 +43,7 @@ namespace WpfApp2
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show(Owner, "¿Seguro que quieres cerrar?", "Cerrar", MessageBoxButton.YesNo, MessageBoxImage.Information);
+            MessageBoxResult result = MessageBox.Show("¿Seguro que quieres cerrar?", "Cerrar", MessageBoxButton.YesNo, MessageBoxImage.Information);
 
             if (result == MessageBoxResult.No)
             {
